@@ -1,5 +1,5 @@
 # 这是我的个人知识库
 # This is my personal wiki.
 
-<baidu.com>
+<https://baidu.com>
 
