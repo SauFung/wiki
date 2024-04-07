@@ -36,7 +36,7 @@ docker ps
 # 查看所有的容器（包括已停止的容器）
 docker ps -a
 # 启动容器
-docker start <container>
+docker start {container}
 # 停止容器
 docker stop <container>
 # 重启容器
@@ -179,7 +179,7 @@ podman run --rm -t arm64v8/debian uname -m
 ```
 
 `docker-compose.yml`：
-```
+```yaml
 services:
   nvim:
     image: docker.io/arm64v8/debian:buster
@@ -190,7 +190,7 @@ services:
 ```
 
 `compile.sh`：
-```
+```bash
 #!/bin/bash
 cp /mnt/sources.list /etc/apt/sources.list
 apt update
@@ -217,3 +217,6 @@ podman-compose up
 - 手动下载 CNI 插件：<https://github.com/containernetworking/plugins/releases>
 - 创建目录：`sudo mkdir /usr/local/lib/cni`
 - 解压缩到 `/usr/local/lib/cni` 中：`sudo tar xvf cni-*.tgz -C /usr/local/lib/cni`
+
+
+hello <world>
