@@ -181,6 +181,18 @@ scp local_file <host>:remote_file
     sshCommand = ssh -i $HOME/.ssh/<private_key> -p <port>
 ```
 
+### Access Github
+
+#### Hosts
+- <https://gitlab.com/ineo6/hosts/-/raw/master/hosts>
+- <https://hosts.gitcdn.top/hosts.txt>
+- <https://raw.githubusercontent.com/maxiaof/github-hosts/master/hosts>
+- <https://raw.hellogithub.com/hosts>
+
+
+
+#### Mirrors
+
 
 
 ## Modern Unix

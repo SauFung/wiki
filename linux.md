@@ -1,5 +1,10 @@
 # Linux cheatsheet
 
+## Little Tips
+
+查看 Linux 发行版名（无需安装任何软件）：`cat /etc/os-release | grep -w NAME`
+查看 CPU 支持的架构版本：`ld.so --help`
+    - 对应位置显示 `supported` 则支持
 
 ## 无图形界面安装 Linux
 
