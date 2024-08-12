@@ -129,3 +129,36 @@ WantedBy=multi-user.target
 - 网卡名称一般为 `enp{N}s0`，例如 `enp4s0`
 - `enp4s0` 替换为设置的物理网卡名称
 
+
+## LXC
+
+修改为特权容器：
+- 编辑 `/etc/pve/lxc/<vmid>.conf`
+- `unprivileged` 有 `1` 改为 `0`
+> 非特权容器不能挂载 NFS 和 SMB 等
+
+## OMV
+
+### NFS 共享
+
+客户端设置：内网 IP 网段
+- 如 OMV 的 IP 为：`192.168.5.10`
+- 则客户端设置为 `192.168.5.0/24`
+
+在局域网查看可用的 NFS 列表：`showmount -e <ip>`
+
+Linux 挂载 NFS：`mount -t nfs <ip>:<path> /mnt/<folder>`
+- 依赖：
+    - Debian：`nfs-common`
+    - Arch：`nfs-utils`
+- `<path>` 依据 `showmount -e <ip>` 输出的路径
+
+自动挂载 NFS：
+- 编辑：`/etc/fstab`
+- 添加一条：`<ip>:<path> /mnt/<folder> nfs default 0 0` 
+- 刷新 systemd：`systemctl daemon-reload`
+- 测试挂载：`mount -a`
+- 查看是否挂载成功：`df -h`
+
+
+
